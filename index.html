@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+
+
+    <title>landing page</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    
+    
+    
+        <style>
+      /* VARS
+   ====================================================== */
+/* LOOP FOR COLORING SECTIONS
+   ================================================================== */
+#section1 {
+  background: url(pictures/streetsupra2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#section2 {
+  background-color: #009688;
+}
+#section3 {
+  background-color: #ffa000;
+}
+#section4 {
+  background-color: #5677fc;
+}
+#section5{
+  background-color: #65344e
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes float-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes float-in-right {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-200px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes float-in-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(200px, 0, 0);
+    transform: translate3d(200px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes float-in-left {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(200px, 0, 0);
+    transform: translate3d(200px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 2.35;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+p {
+  padding-top: 3em;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  -webkit-transition: all 650ms cubic-bezier(0.22, 1, 0.25, 1);
+  transition: all 650ms cubic-bezier(0.22, 1, 0.25, 1);
+}
+nav:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.27);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+nav ul {
+  position: relative;
+  margin: 0;
+  z-index: 2;
+  text-transform: uppercase;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+  padding: 1.35em 0;
+  margin-right: 3em;
+  font-size: 0.9em;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9em;
+}
+section {
+  height: 100vh;
+}
+section h1,
+section h2 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 8em;
+  -webkit-animation: float-in-right 0.45s ease;
+  animation: float-in-right 0.45s ease;
+}
+.intro {
+  -webkit-animation: float-in-left 0.45s ease;
+  animation: float-in-left 0.45s ease;
+}
+.jm-item {
+    padding: 10px;
+    display: inline-block;
+    text-align: left;
+}
+.jm-item-wrapper {
+  position: relative;
+  left: 225px;
+  padding: 7px;
+  background: #E8D7B6;
+}
+
+.jm-item-image {
+  position: relative;
+    overflow: hidden;
+}
+.jm-item-image img {
+  display: block;
+}
+
+.jm-item-title {
+    position: absolute;
+    left: -10px;
+    bottom: 17px;
+    background: #101010;
+    line-height: 1.5em;
+    font-weight: normal;
+    padding: 7px 9px 6px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    color: #FFFFFF;
+    font-size: 1.4em;
+}
+
+.jm-item-overlay {
+  background: #000;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 0.5s ease-in 0s;
+  -moz-transition: opacity 0.5s ease-in 0s;
+  -o-transition: opacity 0.5s ease-in 0s;
+  transition: opacity 0.5s ease-in 0s;
+}
+.jm-item-wrapper:hover .jm-item-overlay {
+  opacity: 0.3;
+}
+
+.jm-item-button {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+}
+.jm-item-button a {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background: #FF6B0E;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    color: #FFFFFF;
+    font-size: 1.2em;
+    line-height: 50px;
+    -webkit-transition: all 0.2s ease-in 0s;
+    -moz-transition: all 0.2s ease-in 0s;
+    -o-transition: all 0.2s ease-in 0s;
+    transition: all 0.2s ease-in 0s;
+    text-decoration: none !important;
+    display: block;
+}
+.jm-item-button a:hover {
+  background: #3b3b3b;  
+}
+
+.first .jm-item-button {
+  -webkit-transition: all 0.5s ease-in 0.5s;
+  -moz-transition: all 0.5s ease-in 0.5s;
+  -o-transition: all 0.5s ease-in 0.5s;
+  transition: all 0.5s ease-in 0.5s;
+  top: -50px; 
+}
+.first .jm-item-wrapper:hover .jm-item-button {
+  top: 20%; 
+}
+
+.jm-item2 {
+    padding: 10px;
+    display: inline-block;
+    text-align: left;
+}
+
+.jm-item-wrapper2 {
+  position: relative;
+  left: 120px;
+  padding: 7px;
+  background: #E8D7B6;
+}
+
+.jm-item-image2 {
+  position: relative;
+    overflow: hidden;
+}
+.jm-item-image2 img {
+  display: block;
+}
+
+.jm-item-title2 {
+    position: absolute;
+    left: -10px;
+    bottom: 17px;
+    background: #101010;
+    line-height: 1.5em;
+    font-weight: normal;
+    padding: 7px 9px 6px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    color: #FFFFFF;
+    font-size: 1.4em;
+}
+
+.jm-item-overlay2 {
+  background: #000;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity 0.5s ease-in 0s;
+  -moz-transition: opacity 0.5s ease-in 0s;
+  -o-transition: opacity 0.5s ease-in 0s;
+  transition: opacity 0.5s ease-in 0s;
+}
+.jm-item-wrapper2:hover .jm-item-overlay2 {
+  opacity: 0.3;
+}
+
+.jm-item-button2 {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+}
+.jm-item-button2 a {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background: #217fde;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    color: #FFFFFF;
+    font-size: 0.9em;
+    line-height: 50px;
+    -webkit-transition: all 0.2s ease-in 0s;
+    -moz-transition: all 0.2s ease-in 0s;
+    -o-transition: all 0.2s ease-in 0s;
+    transition: all 0.2s ease-in 0s;
+    text-decoration: none !important;
+    display: block;
+}
+.jm-item-button2 a:hover {
+  background: #3b3b3b;  
+}
+
+.first2 .jm-item-button2 {
+  -webkit-transition: all 0.5s ease-in 0.5s;
+  -moz-transition: all 0.5s ease-in 0.5s;
+  -o-transition: all 0.5s ease-in 0.5s;
+  transition: all 0.5s ease-in 0.5s;
+  top: -50px; 
+}
+.first2 .jm-item-wrapper2:hover .jm-item-button2 {
+  top: 20%; 
+}
+
+address{
+  text-align: center;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:100,200);
+* {
+  transition: all 300ms ease-out;
+  font-family: 'Raleway';
+}
+[data-social-icons] {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 625px;
+  left: 50%;
+  top: 2900px;
+  margin-left: -313px;
+  margin-top: -35px;
+}
+[data-social-icons] li {
+  line-height: 120px;
+  width: 120px;
+  font-size: 84px;
+  text-align: center;
+  font-family: 'Raleway';
+  font-weight: 100;
+  color: white;
+  float: left;
+  margin-right: 5px;
+}
+[data-social-icons] li:last-child {
+  margin-right: 0;
+}
+[data-social-icons]:hover [data-social-icon] {
+  background-color: gray;
+  opacity: .7;
+}
+[data-social-icons] [data-social-icon]:hover {
+  cursor: pointer;
+  animation-name: hover-anim;
+  animation-duration: 100ms;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 2;
+}
+[data-social-icons] [data-social-icon~=facebook],
+[data-social-icons] [data-social-icon~=facebook]:hover {
+  background-color: #43609c;
+  opacity: 1;
+}
+[data-social-icons] [data-social-icon~=facebook]:before,
+[data-social-icons] [data-social-icon~=facebook]:hover:before {
+  content: "F";
+}
+[data-social-icons] [data-social-icon~=twitter],
+[data-social-icons] [data-social-icon~=twitter]:hover {
+  background-color: #53a7e7;
+  opacity: 1;
+}
+[data-social-icons] [data-social-icon~=twitter]:before,
+[data-social-icons] [data-social-icon~=twitter]:hover:before {
+  content: "T";
+}
+[data-social-icons] [data-social-icon~=instagram],
+[data-social-icons] [data-social-icon~=instagram]:hover {
+  background-color: #d95232;
+  opacity: 1;
+}
+[data-social-icons] [data-social-icon~=instagram]:before,
+[data-social-icons] [data-social-icon~=instagram]:hover:before {
+  content: "I";
+}
+[data-social-icons] [data-social-icon~=tumblr],
+[data-social-icons] [data-social-icon~=tumblr]:hover {
+  background-color: #0274b3;
+  opacity: 1;
+}
+[data-social-icons] [data-social-icon~=tumblr]:before,
+[data-social-icons] [data-social-icon~=tumblr]:hover:before {
+  content: "T";
+}
+[data-social-icons] [data-social-icon~=youtube],
+[data-social-icons] [data-social-icon~=youtube]:hover {
+  background-color: #ec282a;
+  opacity: 1;
+}
+[data-social-icons] [data-social-icon~=youtube]:before,
+[data-social-icons] [data-social-icon~=youtube]:hover:before {
+  content: "Y";
+}
+@keyframes hover-anim {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.follow {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 625px;
+  left: 50%;
+  margin-left: -313px;
+  top: 2850px;
+  margin-top: -90px;
+  font-size: 2.3em;
+  font-weight: 100;
+}
+.follow.facebook:after {
+  content: ' on Facebook';
+}
+.follow.twitter:after {
+  content: ' on Twitter';
+}
+.follow.instagram:after {
+  content: ' on Instagram';
+}
+.follow.tumblr:after {
+  content: ' on Tumblr';
+}
+.follow.youtube:after {
+  content: ' on YouTube';
+}
+
+.contact{
+  text-decoration: none;
+  color: white;
+}
+
+
+
+    </style>
+
+    
+        <script src="js/prefixfree.min.js"></script>
+
+    
+  </head>
+
+  <body>
+
+    <body>
+  <nav id="nav">
+    <ul>
+      <li><a href="#section1" >home</a></li>
+      <li><a href="#section2" >skills</a></li>
+      <li><a href="#section3" >projects</a></li>
+      <li><a href="#section4" >videos</a></li>
+      <li><a href="#section5" >Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <section  id="section1" >
+    <h1>Landing page</h1>
+    <p class="intro">
+      Writer, coder, and future director. What more could you ask for? 
+    </p>
+  </section>
+
+  <section  id="section2" >
+    <h2>skills</h2>
+    <p>
+    I have two years of experince in writing HTML, JavaScript, and CSS. I write, direct, and edit my own videos. I am very knowledgeable in video editing, as i have been doing it for the past four years.
+    </p>
+  </section>
+
+  <section id="section3" >
+    <h2 class="header2">Previous projects that I have done</h2>
+
+    <div class="jm-item first">
+      <div class="jm-item-wrapper">
+        <div class="jm-item-image">
+          <img src="pictures/portfolio.png" width="340" height="240">
+          <span class="jm-item-overlay"> </span>
+          <div class="jm-item-button"><a href="file:///C:/Users/Student/Downloads/portfolio1-master/portfolio1-master/index.html">view</a></div>
+        </div>
+      <div class="jm-item-title">My Portfolio</div>
+      </div>
+    </div>
+
+    <div class="jm-item first">
+      <div class="jm-item-wrapper">
+        <div class="jm-item-image">
+          <img src="pictures/todo.png" width="340" height="240">
+          <span class="jm-item-overlay"> </span>
+          <div class="jm-item-button"><a href="localhost/TODO-LIST2/index.php">view</a></div>
+        </div>
+      <div class="jm-item-title">TODO list</div>
+      </div>
+    </div>
+
+  </section>
+
+  <section  id="section4" >
+    <h2>videos that i have made</h2>
+
+    <div class="jm-item first2">
+      <div class="jm-item-wrapper2">
+        <div class="jm-item-image2">
+          <img src="pictures/rf.png" width="290" height="190">
+          <span class="jm-item-overlay2"> </span>
+          <div class="jm-item-button2"><a href="https://www.youtube.com/watch?v=HFgUntrRE0M">view</a></div>
+        </div>
+      <div class="jm-item-title2">renaissance fiare</div>
+      </div>
+    </div>
+
+<div class="jm-item first2">
+      <div class="jm-item-wrapper2">
+        <div class="jm-item-image2">
+          <img src="pictures/kes.png" width="290" height="190">
+          <span class="jm-item-overlay2"> </span>
+          <div class="jm-item-button2"><a href="https://youtu.be/bzIW26_gX9I">view</a></div>
+        </div>
+      <div class="jm-item-title2">killin em softly</div>
+      </div>
+    </div>
+
+<div class="jm-item first2">
+      <div class="jm-item-wrapper2">
+        <div class="jm-item-image2">
+          <img src="pictures/dst.png" width="290" height="190">
+          <span class="jm-item-overlay2"> </span>
+          <div class="jm-item-button2"><a href="https://www.youtube.com/watch?v=k5bEED0ctSI">view</a></div>
+        </div>
+      <div class="jm-item-title2">daquans sex tape</div>
+      </div>
+    </div>
+  </section>
+
+  <section  id="section5" >
+    <h1>Contact me</h1>
+      <address>
+        email address: <a href="mailto:cadeguevara@gmail.com" target="_top" class="contact">cadeguevara@gmail.com</a>
+</a>
+      </address>  
+    <p class='follow'>Follow me</p>
+      <ul data-social-icons>
+        <li data-social-icon='facebook'></li>
+        <li data-social-icon='twitter'></li>
+        <li data-social-icon='instagram'></li>
+        <li data-social-icon='tumblr'></li>
+        <li data-social-icon='youtube'></li>
+      </ul>
+  </section>
+
+    </body>
+</html>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>
